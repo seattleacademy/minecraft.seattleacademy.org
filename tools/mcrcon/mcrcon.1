@@ -1,0 +1,66 @@
+.\" Process this file with
+.\" groff -man -Tascii mcrcon.1
+.\"
+.TH MCRCON 1 "January 2020" "Version 0.7.1"
+.SH NAME 
+mcrcon \- send rcon commands to a Minecraft server
+.SH SYNOPSIS
+.B mcrcon [
+options
+.B ] [
+commands
+.B ]
+.SH DESCRIPTION
+mcrcon is Minecraft rcon client for remote administration and server maintenance scripts.
+.SH OPTIONS
+.IP -H
+Server address (default: localhost)
+.IP -P
+Port (default: 25575)
+.IP -p
+Rcon password
+.IP -t
+Terminal mode
+.IP -s
+Silent mode
+.IP -c
+Disable colors
+.IP -r
+Output raw packets
+.IP -w
+Wait for specified duration (seconds) between each command (1 - 600s)
+.IP -h
+Print usage
+.IP -v
+Output version information
+.PP
+Commands with spaces must be enclosed in quotes.
+.br
+mcrcon will start in terminal mode if no commands are given.
+.SH ENVIRONMENT VARIABLES
+Server address, port and password can be set with following environment variables:
+.PP
+\fBMCRCON_HOST
+.br
+\fBMCRCON_PORT
+.br
+\fBMCRCON_PASS\fR
+.PP
+Note that command-line options will override environment variables.
+.SH EXAMPLES
+Make rcon connection in terminal mode using default port
+.RS
+\fBmcrcon\fR -H my.minecraft.server -p password
+.RE
+.PP
+Send "weather clear" command to server using custom port 1337
+.RS
+\fBmcrcon\fR -H my.minecraft.server -P 1337 -p password "weather clear"
+.RE
+.PP
+Send three commands ("say", "save-all", "stop") and wait five seconds between the commands.
+.RS
+\fBmcrcon\fR -H my.minecraft.server -p password -w 5 "say Server is restarting!" save-all stop
+.RE
+.SH BUGS
+Report bugs to \fBtiiffi+mcrcon at gmail\fR or \fBhttps://github.com/Tiiffi/mcrcon/issues/\fR
