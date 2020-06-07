@@ -7,10 +7,10 @@
 .ssh/
 backups/
 docs/index.php
-mathworld/
-oldmathworld/
 server/
 tools/
 www/
 .cache/
 .npm/
+docs/logs
+docs/schematics
