@@ -15,3 +15,9 @@ body {
 .portfolio-item {
   margin-bottom: 30px;
 }
+
+#saas_logo {
+    background-image: url('../images/saas.svg');
+    background-repeat: no-repeat;
+    color: transparent !important;
+}
